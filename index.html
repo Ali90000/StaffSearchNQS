@@ -284,6 +284,7 @@
     <textarea id="hiddenClipboardInput" style="position: absolute; left: -9999px; opacity: 0;"></textarea>
 
     <script>
+        // الرابط الخاص بك مدمج هنا بنجاح
         const API_URL = "https://script.google.com/macros/s/AKfycbwnUnKbsgfoCiix9xUF4ItCoNG0VsklwXbJeC3gmN5mQJHX_sdTZpB-7j-2FHUvGO2twQ/exec";
 
         let rawData = [];
@@ -330,7 +331,7 @@
 
         function highlightText(text, searchStr) {
             if (!searchStr) return text;
-            const regex = new RegExp(`(${searchStr.replace(/[.*+?^${}()|[\]\]/g, '\$&')})`, 'gi');
+            const regex = new RegExp(`(${searchStr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
             return text.replace(regex, '<mark>$1</mark>');
         }
 
